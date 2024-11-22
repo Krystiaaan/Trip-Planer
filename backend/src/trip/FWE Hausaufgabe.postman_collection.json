@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "951384f2-074c-4322-9427-56a7f8e6da63",
+		"name": "FWE Hausaufgabe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31466298"
+	},
+	"item": [
+		{
+			"name": "Get all Trips with Destination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/search?query=15.05.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "15.05.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by Destination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/search?query=testdestination",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "testdestination"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by Trip",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/search?query=testtrip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "testtrip"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Trip by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/278",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"278"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add 1 to N new Destination to Trip",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trip_id\": 278,\r\n  \"destinations\": [\r\n    {\r\n      \"name\": \"Berlin\",\r\n      \"description\": \"A visit to Berlin.\",\r\n      \"date\": \"2023-06-01T00:00:00Z\",\r\n      \"activities\": \"Sightseeing, Museum visit\",\r\n      \"photos\": [\r\n        \"https://example.com/photo1.jpg\",\r\n        \"https://example.com/photo2.jpg\"\r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"Paris\",\r\n      \"description\": \"Exploring Paris.\",\r\n      \"date\": \"2023-06-05T00:00:00Z\",\r\n      \"activities\": \"Eiffel Tower, Louvre\",\r\n      \"photos\": [\r\n        \"https://example.com/photo3.jpg\",\r\n        \"https://example.com/photo4.jpg\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/dest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"dest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Trip",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Summer Vacation\",\r\n  \"description\": \"A fun summer vacation with family.\",\r\n  \"start_date\": \"2023-07-01T00:00:00Z\",\r\n  \"end_date\": \"2023-07-15T00:00:00Z\",\r\n  \"participants\": 4,\r\n  \"images\": [\r\n    \"https://example.com/photo1.jpg\",\r\n    \"https://example.com/photo2.jpg\"\r\n  ],\r\n  \"finances\": {\r\n    \"budget\": 2000,\r\n    \"expenses\": [\r\n      { \"item\": \"Flights\", \"cost\": 500 },\r\n      { \"item\": \"Hotel\", \"cost\": 800 },\r\n      { \"item\": \"Food\", \"cost\": 300 }\r\n    ]\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Trip with ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Summer Vacation\",\r\n  \"description\": \"An updated description for the summer vacation.\",\r\n  \"start_date\": \"2023-07-01T00:00:00Z\",\r\n  \"end_date\": \"2023-07-20T00:00:00Z\",\r\n  \"participants\": 5,\r\n  \"images\": [\r\n    \"https://example.com/photo1_updated.jpg\",\r\n    \"https://example.com/photo2_updated.jpg\"\r\n  ],\r\n  \"finances\": {\r\n    \"budget\": 2500,\r\n    \"expenses\": [\r\n      { \"item\": \"Flights\", \"cost\": 600 },\r\n      { \"item\": \"Hotel\", \"cost\": 1000 },\r\n      { \"item\": \"Food\", \"cost\": 400 }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trips/280",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"280"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Trip with ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/280",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"280"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a specific destination by trip ID and destination ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/trips/279/destinations/163",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trips",
+						"279",
+						"destinations",
+						"163"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
