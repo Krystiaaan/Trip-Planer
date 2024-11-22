@@ -1,4 +1,4 @@
-# FWE-SS-24-765219 Trip App
+# Trip App
 
 MY FIRST PROJECT
 
@@ -33,10 +33,6 @@ Trip planning project that allows users to plan and organize trips and destinati
 
 1. **Clone the repository**
 
-```bash
-git clone https://code.fbi.h-da.de/istkrsadl/fwe-ss-24-765219.git
-cd FWE-SS-24-765219
-```
 2. **Install dependencies** for both backend and frontend
 ```bash
 npm install
